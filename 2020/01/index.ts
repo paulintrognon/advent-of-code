@@ -27,10 +27,11 @@ expenses.some((expense1) => {
 function testExpenses(expenses: number[]): boolean {
   const sum = expenses.reduce((expense1, expense2) => expense1 + expense2, 0)
 
-  if (sum === 2020) {
-    const result = expenses.reduce((expense1, expense2) => expense1 * expense2, 1)
-    console.log({ expenses, result })
-    return true
+  if (sum !== 2020) {
+    return false
   }
-  return false
+
+  const result = expenses.reduce((expense1, expense2) => expense1 * expense2, 1)
+  console.log({ expenses, result })
+  return true
 }
